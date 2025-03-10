@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Container, Typography, Box, Button, Paper } from "@mui/material";
+import { useAuth0 } from "@auth0/auth0-react"; // Import Auth0
+import { Container, Typography, Box, Button, TextField, Paper } from "@mui/material";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { keyframes } from "@emotion/react";
@@ -8,7 +9,7 @@ import { keyframes } from "@emotion/react";
 // Load Stripe (Replace with your **Stripe Public Key**)
 const stripePromise = loadStripe("your-stripe-public-key");
 
-// **Full-Page Acid-Trip Background Animation**
+// **Pulsing Acid-Trip Background Animation**
 const acidTripAnimation = keyframes`
   0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
   50% { background-position: 100% 50%; filter: hue-rotate(120deg); }
@@ -21,7 +22,7 @@ function useQuery() {
 }
 
 // Stripe Checkout Component
-function StripeCheckout({ amount }) {
+function StripeCheckout({ amount, userEmail }) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -34,6 +35,7 @@ function StripeCheckout({ amount }) {
       {
         payment_method: {
           card: cardElement,
+          billing_details: { email: userEmail }, // Attach user email
         },
       }
     );
@@ -43,14 +45,14 @@ function StripeCheckout({ amount }) {
       alert("Payment Failed. Please try again.");
     } else {
       console.log("Payment successful", paymentIntent);
-      alert("Payment Successful! Thank you for subscribing.");
+      alert(`Payment Successful! Receipt sent to ${userEmail}`);
     }
   };
 
   return (
     <Box sx={{ mt: 3, width: "100%" }}>
-      <CardElement 
-        options={{ style: { base: { fontSize: "18px", color: "#fff" } } }} 
+      <CardElement
+        options={{ style: { base: { fontSize: "18px", color: "#fff" } } }}
       />
       <Button
         variant="contained"
@@ -76,15 +78,18 @@ function StripeCheckout({ amount }) {
 
 // Main Payment Component
 function Payment() {
+  const { user, isAuthenticated } = useAuth0(); // Get user info from Auth0
   const query = useQuery();
-  const plan = query.get("plan") || "🧬 Lifespan AI";
-  const price = query.get("price") || "999";
+  const plan = query.get("plan") || "Basic";
+  const price = query.get("price") || "199"; // Default to Basic plan
+
+  const [email, setEmail] = useState(isAuthenticated && user?.email ? user.email : ""); // Use Auth0 email if available
 
   return (
-    <Box 
-      sx={{ 
+    <Box
+      sx={{
         minHeight: "100vh",
-        width: "100vw", 
+        width: "100vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -96,9 +101,9 @@ function Payment() {
         overflow: "hidden"
       }}
     >
-      <Typography 
-        variant="h2" 
-        gutterBottom 
+      <Typography
+        variant="h2"
+        gutterBottom
         sx={{
           fontFamily: "Orbitron, sans-serif",
           fontWeight: "bold",
@@ -111,8 +116,8 @@ function Payment() {
         Complete Your Subscription 🧬
       </Typography>
 
-      <Paper 
-        elevation={10} 
+      <Paper
+        elevation={10}
         sx={{
           p: 4,
           borderRadius: 5,
@@ -133,9 +138,50 @@ function Payment() {
           Price: ${price} / year
         </Typography>
 
+        {/* Email Input – Now Styled Like Stripe's Card Input */}
+        {!isAuthenticated || !user?.email ? (
+          <Box
+            sx={{
+              mb: 3,
+              width: "100%",
+              background: "rgba(0,0,0,0.6)",
+              borderRadius: "8px",
+              padding: "12px",
+              border: "2px solid #00ffff",
+              transition: "0.3s",
+              "&:hover": { borderColor: "#ff00ff" },
+              "&:focus-within": {
+                borderColor: "#ff00ff",
+                boxShadow: "0px 0px 20px #ff00ff"
+              }
+            }}
+          >
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{
+                width: "100%",
+                border: "none",
+                outline: "none",
+                fontSize: "18px",
+                color: "#fff",
+                background: "transparent",
+                padding: "10px",
+                fontFamily: "Orbitron, sans-serif"
+              }}
+            />
+          </Box>
+        ) : (
+          <Typography variant="h6" sx={{ color: "#00ffff", mb: 2 }}>
+            Email: {email}
+          </Typography>
+        )}
+
         {/* Stripe Payment */}
         <Elements stripe={stripePromise}>
-          <StripeCheckout amount={parseFloat(price)} />
+          <StripeCheckout amount={parseFloat(price)} userEmail={email} />
         </Elements>
       </Paper>
     </Box>
