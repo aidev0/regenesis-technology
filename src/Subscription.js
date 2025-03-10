@@ -28,7 +28,7 @@ const subscriptionTiers = [
     { 
       title: "🧪 Regenesis Lab", 
       price: "10,000", 
-      description: "AI-driven longevity insights with lab-conducted gene modification and stem cell rejuvenation.",
+      description: "AI-driven aging reversal with gene modification & stem cell rejuvenation lab treatments.",
       features: ["Gene Modification & Stem Cell Lab Therapy", "Genetic & Cellular Optimization", "AI-Based Aging Detection", "AI-Driven Gene Modification"],
       gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)"
     },
