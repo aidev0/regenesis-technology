@@ -21,39 +21,63 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-// Stripe Checkout Component
 function StripeCheckout({ amount, userEmail }) {
   const stripe = useStripe();
   const elements = useElements();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handlePayment = async () => {
-    if (!stripe || !elements) return;
+    setErrorMessage(""); // Clear previous errors
+
+    if (!stripe || !elements) {
+      setErrorMessage("Stripe is not properly initialized. Please refresh the page.");
+      return;
+    }
+
+    if (!userEmail) {
+      setErrorMessage("Please enter a valid email before proceeding.");
+      return;
+    }
 
     const cardElement = elements.getElement(CardElement);
-    const { error, paymentIntent } = await stripe.confirmCardPayment(
-      "your-client-secret", // Replace with dynamically generated server-side secret
-      {
-        payment_method: {
-          card: cardElement,
-          billing_details: { email: userEmail }, // Attach user email
-        },
-      }
-    );
+    if (!cardElement) {
+      setErrorMessage("Card details are missing. Please enter your card information.");
+      return;
+    }
 
-    if (error) {
-      console.error(error);
-      alert("Payment Failed. Please try again.");
-    } else {
-      console.log("Payment successful", paymentIntent);
-      alert(`Payment Successful! Receipt sent to ${userEmail}`);
+    try {
+      const { error, paymentIntent } = await stripe.confirmCardPayment(
+        "your-client-secret", // Replace with dynamically generated server-side secret
+        {
+          payment_method: {
+            card: cardElement,
+            billing_details: { email: userEmail },
+          },
+        }
+      );
+
+      if (error) {
+        setErrorMessage(error.message || "Payment failed. Please try again.");
+      } else {
+        console.log("Payment successful", paymentIntent);
+        alert(`Payment Successful! Receipt sent to ${userEmail}`);
+      }
+    } catch (error) {
+      console.error("Unexpected error:", error);
+      setErrorMessage("An unexpected error occurred. Please try again.");
     }
   };
 
   return (
     <Box sx={{ mt: 3, width: "100%" }}>
-      <CardElement
-        options={{ style: { base: { fontSize: "18px", color: "#fff" } } }}
-      />
+      <CardElement options={{ style: { base: { fontSize: "18px", color: "#fff" } } }} />
+      
+      {errorMessage && (
+        <Typography sx={{ color: "red", mt: 2, fontSize: "1rem" }}>
+          ⚠️ {errorMessage}
+        </Typography>
+      )}
+
       <Button
         variant="contained"
         sx={{
