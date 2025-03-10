@@ -77,8 +77,8 @@ function StripeCheckout({ amount }) {
 // Main Payment Component
 function Payment() {
   const query = useQuery();
-  const plan = query.get("plan") || "Basic";
-  const price = query.get("price") || "199"; // Default to Basic plan
+  const plan = query.get("plan") || "🧬 Lifespan AI";
+  const price = query.get("price") || "999";
 
   return (
     <Box 
