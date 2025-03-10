@@ -1,27 +1,22 @@
-import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Home from './Home';
-
-// 1) Create a custom MUI theme to use your Google Font and brand colors
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Poppins, sans-serif'  // matches the <link> in index.html
-  },
-  palette: {
-    primary: {
-      main: '#673ab7' // Deep Purple (you can change to any color)
-    },
-    secondary: {
-      main: '#f50057' // Pink (example secondary)
-    }
-  }
-});
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Subscription from "./Subscription";
+import Solutions from "./Solutions";
+import FuturePlans from "./FuturePlans";
+import Payment from "./Payment"; // Import Payment Page
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/subscription" element={<Subscription />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/future-plans" element={<FuturePlans />} />
+        <Route path="/payment" element={<Payment />} /> {/* Payment Route */}
+      </Routes>
+    </Router>
   );
 }
 
