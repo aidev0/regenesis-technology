@@ -142,7 +142,7 @@ function Solutions() {
         <Button
           variant="contained"
           component={Link}
-          to="/subscription"
+          to="/products"
           sx={{
             fontWeight: "bold",
             fontSize: "1.5rem",
