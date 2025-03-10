@@ -13,35 +13,6 @@ const acidTripAnimation = keyframes`
 function Home() {
     return (
         <>
-            {/* HEADER / NAV BAR */}
-            <AppBar
-                position="static"
-                sx={{
-                    background: "linear-gradient(90deg, #ff00ff, #00ffff)",
-                    boxShadow: "0px 0px 20px rgba(255, 0, 255, 0.8)"
-                }}
-            >
-                <Toolbar>
-                    {/* Logo Image */}
-                    <Box
-                        component="img"
-                        src="/logo.png"
-                        alt="Regenesis Technology Logo"
-                        sx={{ height: 50, marginRight: 2, filter: "drop-shadow(0px 0px 10px #fff)" }}
-                    />
-                    <Typography
-                        variant="h5"
-                        sx={{
-                            fontWeight: "bold",
-                            fontFamily: "Orbitron, sans-serif",
-                            textShadow: "0px 0px 15px rgba(255, 255, 255, 0.9)"
-                        }}
-                    >
-                        Regenesis Technology
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-
             {/* HERO SECTION */}
             <Box
                 sx={{
@@ -116,28 +87,6 @@ function Home() {
                 >
                     🧬 I want to live forever, sign me up!
                 </Button>
-
-            </Box>
-
-            {/* FOOTER */}
-            <Box
-                sx={{
-                    background: "linear-gradient(90deg, #ff00ff, #00ffff)",
-                    py: 3,
-                    textAlign: 'center',
-                    boxShadow: "0px 0px 20px rgba(255, 0, 255, 0.8)"
-                }}
-            >
-                <Typography
-                    variant="body2"
-                    sx={{
-                        fontWeight: "bold",
-                        fontFamily: "Orbitron, sans-serif",
-                        textShadow: "0px 0px 10px rgba(255, 255, 255, 0.9)"
-                    }}
-                >
-                    © {new Date().getFullYear()} Regenesis Technology – Reprogramming Life
-                </Typography>
             </Box>
         </>
     );
