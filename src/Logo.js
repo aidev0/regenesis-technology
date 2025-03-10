@@ -22,8 +22,8 @@ function Logo() {
   return (
     <Box
       sx={{
-        width: 120,
-        height: 60,
+        width: 80,
+        height: 40,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -31,7 +31,7 @@ function Logo() {
         backgroundSize: "400% 400%",
         animation: `${acidTripBackground} 6s infinite alternate ease-in-out`,
         borderRadius: "50px",
-        padding: "10px",
+        padding: "5px",
       }}
     >
       <svg
