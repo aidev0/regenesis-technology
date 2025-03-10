@@ -71,7 +71,7 @@ function Home() {
                     variant="contained"
                     size="large"
                     component={Link}
-                    to="/subscription"
+                    to="/products"
                     sx={{
                         fontSize: "1.2rem",
                         fontWeight: "bold",

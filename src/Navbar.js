@@ -70,7 +70,8 @@ function Navbar() {
           {/* NAVIGATION MENU - Desktop */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3, alignItems: "center", height: "100%" }}>
             <Button component={Link} to="/" sx={navButtonStyles}>Home</Button>
-            <Button component={Link} to="/subscription" sx={navButtonStyles}>Products</Button>
+            <Button component={Link} to="/solutions" sx={navButtonStyles}>Solutions</Button>
+            <Button component={Link} to="/products" sx={navButtonStyles}>Products</Button>
             <Button component={Link} to="/team" sx={navButtonStyles}>Team</Button>
 
             {/* LOGIN / LOGOUT BUTTON */}

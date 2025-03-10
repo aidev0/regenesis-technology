@@ -14,14 +14,14 @@ const subscriptionTiers = [
     {
         title: "🦠 Healthspan AI",
         price: "499",
-        description: "AI-driven health optimization, detection of aging-related diseases, and annual DNA testing.",
+        description: "AI-powered detection of aging-related diseases & annual DNA testing.",
         features: ["AI-Powered Aging & Disease Detection", "AI-Driven Healthspan & Longevity Insights", "Annual DNA Testing & Longevity Biomarkers"],
         gradient: "linear-gradient(135deg, #ff00ff, #ff6600, #00ffcc)"
     },
     {
         title: "🧬 Lifespan AI",
         price: "999",
-        description: "AI-based biological age tracking, anti-aging strategy, and AI-powered gene modification recommendations.",
+        description: "AI-powered lifespan & longevity insights, gene modification recommendations & annual DNA testing.",
         features: ["AI-Powered Aging Detection", "AI-Powered Aging Reversal Recommendations", "AI-Driven Gene Modification Insights", "Annual DNA Testing & Longevity Biomarkers"],
         gradient: "linear-gradient(135deg, #00ffcc, #ff00ff, #ff6600)"
     },
@@ -48,7 +48,7 @@ const subscriptionTiers = [
     }
 ];
 
-function Subscription() {
+function Products() {
     return (
         <Container maxWidth="xl" sx={{ py: 7 }}>
             <Typography variant="h2" textAlign="center" gutterBottom sx={{
@@ -156,4 +156,4 @@ function Subscription() {
     );
 }
 
-export default Subscription;
+export default Products;
