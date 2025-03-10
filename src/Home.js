@@ -81,18 +81,17 @@ function Home() {
                         mb: 3,
                         fontFamily: "Orbitron, sans-serif",
                         color: "#fff",
-                        textShadow: "0px 0px 10px rgba(255, 255, 255, 0.8)"
+                        textShadow: "0px 0px 10px rgba(255, 255, 255, 0.8)",
+                        lineHeight: 1.6 // Improves readability
                     }}
                 >
-                    Regenesis Technology is on a 20-year mission to eliminate aging and achieve
-                    <Box component="span" sx={{ fontWeight: "bold" }}> biological immortality.</Box>
-                     In the
-                    <Box component="span" sx={{ fontWeight: "bold" }}> first 5 years,</Box>
-                    we are developing AI to decode the
-                    <Box component="span" sx={{ fontWeight: "bold" }}> genetics of aging</Box>
-                     and recommend genetic reprogramming to reverse aging, maximize lifespan, and extend healthspan.
+                    Regenesis Technology is on a mission to eliminate aging and achieve
+                    <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}> biological immortality. </Box>
+                    We are developing AI to decode the
+                    <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}> genetics of aging </Box>
+                    and recommend genetic reprogramming to reverse aging, maximize lifespan, and extend healthspan.
                     This is the beginning of a future where
-                    <Box component="span" sx={{ fontWeight: "bold" }}> aging is a choice.</Box>
+                    <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}> aging is a choice. </Box>
                 </Typography>
 
                 {/* Call to Action Button */}
