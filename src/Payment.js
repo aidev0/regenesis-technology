@@ -8,11 +8,11 @@ import { keyframes } from "@emotion/react";
 // Load Stripe (Replace with your **Stripe Public Key**)
 const stripePromise = loadStripe("your-stripe-public-key");
 
-// **Pulsing Acid-Trip Background**
+// **Full-Page Acid-Trip Background Animation**
 const acidTripAnimation = keyframes`
   0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
-  50% { background-position: 100% 50%; filter: hue-rotate(90deg); }
-  100% { background-position: 0% 50%; filter: hue-rotate(180deg); }
+  50% { background-position: 100% 50%; filter: hue-rotate(120deg); }
+  100% { background-position: 0% 50%; filter: hue-rotate(240deg); }
 `;
 
 // Function to Extract URL Parameters
@@ -48,7 +48,7 @@ function StripeCheckout({ amount }) {
   };
 
   return (
-    <Box sx={{ mt: 3 }}>
+    <Box sx={{ mt: 3, width: "100%" }}>
       <CardElement 
         options={{ style: { base: { fontSize: "18px", color: "#fff" } } }} 
       />
@@ -81,18 +81,19 @@ function Payment() {
   const price = query.get("price") || "199"; // Default to Basic plan
 
   return (
-    <Container 
-      maxWidth="md" 
+    <Box 
       sx={{ 
-        minHeight: "100vh", 
-        display: "flex", 
-        flexDirection: "column", 
-        alignItems: "center", 
+        minHeight: "100vh",
+        width: "100vw", 
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
         background: "linear-gradient(270deg, #ff00ff, #00ffff, #ff6600, #00ff66)",
-        backgroundSize: "400% 400%",
-        animation: `${acidTripAnimation} 10s infinite alternate ease-in-out`
+        backgroundSize: "500% 500%",
+        animation: `${acidTripAnimation} 12s infinite alternate ease-in-out`,
+        overflow: "hidden"
       }}
     >
       <Typography 
@@ -101,7 +102,7 @@ function Payment() {
         sx={{
           fontFamily: "Orbitron, sans-serif",
           fontWeight: "bold",
-          textShadow: "0px 0px 20px rgba(255, 255, 255, 0.9)",
+          textShadow: "0px 0px 30px rgba(255, 255, 255, 0.9)",
           background: "linear-gradient(90deg, #ff00ff, #00ffff)",
           WebkitBackgroundClip: "text",
           color: "transparent"
@@ -115,14 +116,14 @@ function Payment() {
         sx={{
           p: 4,
           borderRadius: 5,
-          background: "rgba(0,0,0,0.7)",
+          background: "rgba(0,0,0,0.8)",
           color: "#fff",
           textAlign: "center",
           backdropFilter: "blur(15px)",
           mt: 3,
-          width: "100%",
+          width: "90%",
           maxWidth: "500px",
-          boxShadow: "0px 0px 50px rgba(255, 255, 255, 0.2)"
+          boxShadow: "0px 0px 50px rgba(255, 255, 255, 0.3)"
         }}
       >
         <Typography variant="h4" sx={{ fontWeight: "bold", mb: 1 }}>
@@ -137,7 +138,7 @@ function Payment() {
           <StripeCheckout amount={parseFloat(price)} />
         </Elements>
       </Paper>
-    </Container>
+    </Box>
   );
 }
 
