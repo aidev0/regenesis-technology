@@ -11,43 +11,43 @@ const neonPulse = keyframes`
 `;
 
 const subscriptionTiers = [
-    { 
-      title: "🦠 Healthspan AI", 
-      price: "499", 
-      description: "AI-driven health optimization, detection of aging-related diseases, and annual DNA testing.",
-      features: ["AI-Powered Aging & Disease Detection", "AI-Driven Healthspan & Longevity Insights", "Annual DNA Testing & Longevity Biomarkers"],
-      gradient: "linear-gradient(135deg, #ff00ff, #ff6600, #00ffcc)"
+    {
+        title: "🦠 Healthspan AI",
+        price: "499",
+        description: "AI-driven health optimization, detection of aging-related diseases, and annual DNA testing.",
+        features: ["AI-Powered Aging & Disease Detection", "AI-Driven Healthspan & Longevity Insights", "Annual DNA Testing & Longevity Biomarkers"],
+        gradient: "linear-gradient(135deg, #ff00ff, #ff6600, #00ffcc)"
     },
-    { 
-      title: "🧬 Lifespan AI", 
-      price: "999", 
-      description: "AI-based biological age tracking, anti-aging strategy, and AI-powered gene modification recommendations.",
-      features: ["AI-Powered Aging Detection", "AI-Powered Aging Reversal Recommendations", "AI-Driven Gene Modification Insights", "Annual DNA Testing & Longevity Biomarkers"],
-      gradient: "linear-gradient(135deg, #00ffcc, #ff00ff, #ff6600)"
+    {
+        title: "🧬 Lifespan AI",
+        price: "999",
+        description: "AI-based biological age tracking, anti-aging strategy, and AI-powered gene modification recommendations.",
+        features: ["AI-Powered Aging Detection", "AI-Powered Aging Reversal Recommendations", "AI-Driven Gene Modification Insights", "Annual DNA Testing & Longevity Biomarkers"],
+        gradient: "linear-gradient(135deg, #00ffcc, #ff00ff, #ff6600)"
     },
-    { 
-      title: "🧪 Regenesis Lab", 
-      price: "10,000", 
-      description: "AI-driven aging reversal with gene modification & stem cell rejuvenation lab treatments.",
-      features: ["Gene Modification & Stem Cell Lab Therapy", "Genetic & Cellular Optimization", "AI-Based Aging Detection", "AI-Driven Gene Modification"],
-      gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)"
+    {
+        title: "🧪 Regenesis Lab",
+        price: "10,000",
+        description: "AI-driven aging reversal with gene modification & stem cell rejuvenation lab treatments.",
+        features: ["Gene Modification & Stem Cell Lab Therapy", "Genetic & Cellular Optimization", "AI-Based Aging Detection", "AI-Driven Gene Modification"],
+        gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)"
     },
-    { 
-      title: "🌴 Immortal Lifestyle", 
-      price: "20,000", 
-      description: "Lifespan AI + genetic modification & stem cell rejuvenation lab therapy + 2-Week Longevity Retreat.",
-      features: ["Advanced Longevity AI", "Custom Longevity Lab Treatments", "Gene Editing & Regenerative Lab Therapy", "Stem Cell & Peptide Lab Therapy", "Exclusive Immortality Retreat"],
-      gradient: "linear-gradient(135deg, #00ff99, #ff00ff, #00ffff)"
+    {
+        title: "🌴 Immortal Lifestyle",
+        price: "20,000",
+        description: "Lifespan AI + genetic modification & stem cell rejuvenation lab therapy + 2-Week Longevity Retreat.",
+        features: ["Advanced Longevity AI", "Custom Longevity Lab Treatments", "Gene Editing & Regenerative Lab Therapy", "Stem Cell & Peptide Lab Therapy", "Exclusive Immortality Retreat"],
+        gradient: "linear-gradient(135deg, #00ff99, #ff00ff, #00ffff)"
     },
-    { 
-      title: "♾️ Immortal Investor", 
-      price: "50,000", 
-      description: "1% Ownership in Regenesis + Lifespan AI + full regenerative lab treatment + exclusive retreat.",
-      features: ["1% Equity (Price for the First Year Only)", "Biological Genetics Reprogramming Lab Therapy", "Gene Editing & Stem Cell Regeneration Lab Therapy", "Exclusive Immortality Retreat", "First Access to Anti-Aging Breakthroughs"],
-      gradient: "linear-gradient(135deg, #0000ff, #ff00ff, #00ffcc)"
+    {
+        title: "♾️ Immortal Investor",
+        price: "50,000",
+        description: "1% Ownership in Regenesis + Lifespan AI + full regenerative lab treatment + exclusive retreat.",
+        features: ["1% Equity (Price for the First Year Only)", "Biological Genetics Reprogramming Lab Therapy", "Gene Editing & Stem Cell Regeneration Lab Therapy", "Exclusive Immortality Retreat", "First Access to Anti-Aging Breakthroughs"],
+        gradient: "linear-gradient(135deg, #0000ff, #ff00ff, #00ffcc)"
     }
-  ];
-    
+];
+
 function Subscription() {
     return (
         <Container maxWidth="xl" sx={{ py: 7 }}>
@@ -117,16 +117,36 @@ function Subscription() {
                                     sx={{
                                         fontWeight: "bold",
                                         width: "100%",
+                                        fontSize: "1.3rem",
+                                        letterSpacing: "1px",
+                                        textTransform: "uppercase",
                                         background: "linear-gradient(45deg, #ff00ff, #ff6600)",
                                         color: "#fff",
+                                        borderRadius: "50px",
+                                        padding: "15px 20px",
                                         boxShadow: "0px 0px 25px rgba(255, 0, 255, 1)",
-                                        "&:hover": { background: "linear-gradient(45deg, #ff6600, #ff00ff)" }
+                                        transition: "all 0.3s ease-in-out",
+                                        animation: "pulse 1.5s infinite alternate",
+                                        "&:hover": {
+                                            background: "linear-gradient(45deg, #ff6600, #ff00ff)",
+                                            transform: "scale(1.08)",
+                                            boxShadow: "0px 0px 50px rgba(255, 255, 255, 0.9)"
+                                        },
+                                        "&:active": {
+                                            transform: "scale(0.95)",
+                                            filter: "brightness(1.2)"
+                                        },
+                                        "@keyframes pulse": {
+                                            "0%": { boxShadow: "0px 0px 20px rgba(255, 0, 255, 0.6)" },
+                                            "100%": { boxShadow: "0px 0px 40px rgba(255, 0, 255, 1)" }
+                                        }
                                     }}
                                     component={Link}
                                     to={`/payment?plan=${tier.title}&price=${tier.price}`}
                                 >
-                                    {tier.title === "💰 Immortal Investor" ? "Invest Now 💰" : "Join Now 🧬"}
+                                    🚀 Join Now 🧬
                                 </Button>
+
                             </CardContent>
                         </Card>
                     </Grid>
