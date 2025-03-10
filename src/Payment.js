@@ -71,7 +71,7 @@ function StripeCheckout({ amount, userEmail }) {
   return (
     <Box sx={{ mt: 3, width: "100%" }}>
       <CardElement options={{ style: { base: { fontSize: "18px", color: "#fff" } } }} />
-      
+
       {errorMessage && (
         <Typography sx={{ color: "red", mt: 2, fontSize: "1rem" }}>
           ⚠️ {errorMessage}
@@ -162,21 +162,21 @@ function Payment() {
           Price: ${price} / year
         </Typography>
 
-        {/* Email Input – Now Styled Like Stripe's Card Input */}
+        {/* Styled Email Input */}
         {!isAuthenticated || !user?.email ? (
           <Box
             sx={{
               mb: 3,
               width: "100%",
-              background: "rgba(0,0,0,0.6)",
-              borderRadius: "8px",
+              background: "rgba(0, 0, 0, 0.8)", // Darker background to match Stripe
+              borderRadius: "5px",
               padding: "12px",
-              border: "2px solid #00ffff",
+              border: "2px solid transparent", // No default border
               transition: "0.3s",
-              "&:hover": { borderColor: "#ff00ff" },
+              "&:hover": { borderColor: "#ff00ff" }, // Neon glow on hover
               "&:focus-within": {
                 borderColor: "#ff00ff",
-                boxShadow: "0px 0px 20px #ff00ff"
+                boxShadow: "0px 0px 15px #ff00ff"
               }
             }}
           >
@@ -189,11 +189,11 @@ function Payment() {
                 width: "100%",
                 border: "none",
                 outline: "none",
-                fontSize: "18px",
+                fontSize: "16px", // Matches Stripe input
                 color: "#fff",
                 background: "transparent",
                 padding: "10px",
-                fontFamily: "Orbitron, sans-serif"
+                fontFamily: "Arial, sans-serif", // More uniform
               }}
             />
           </Box>
