@@ -126,7 +126,10 @@ function Navbar() {
               <ListItem button component={Link} to="/" onClick={handleMobileToggle}>
                 <ListItemText primary="Home" sx={mobileNavText} />
               </ListItem>
-              <ListItem button component={Link} to="/subscription" onClick={handleMobileToggle}>
+              <ListItem button component={Link} to="/solutions" onClick={handleMobileToggle}>
+                <ListItemText primary="Solutions" sx={mobileNavText} />
+              </ListItem>
+              <ListItem button component={Link} to="/products" onClick={handleMobileToggle}>
                 <ListItemText primary="Products" sx={mobileNavText} />
               </ListItem>
               <ListItem button component={Link} to="/team" onClick={handleMobileToggle}>

@@ -78,7 +78,6 @@ function Solutions() {
         gutterBottom
         sx={{
           fontFamily: "Orbitron, sans-serif",
-          fontWeight: "bold",
           background: "linear-gradient(90deg, #ff00ff, #00ffff)",
           WebkitBackgroundClip: "text",
           color: "transparent",

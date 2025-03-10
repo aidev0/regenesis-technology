@@ -53,12 +53,13 @@ function Team() {
       }}
     >
       {/* Page Title */}
+      
       <Typography
         variant="h2"
         gutterBottom
         sx={{
           fontFamily: "Orbitron, sans-serif",
-          fontWeight: "bold",
+          fontWeight: "regular",
           background: "linear-gradient(90deg, #ff00ff, #00ffff)",
           WebkitBackgroundClip: "text",
           color: "transparent",
