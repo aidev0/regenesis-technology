@@ -43,7 +43,7 @@ const subscriptionTiers = [
         title: "♾️ Immortal Investor",
         price: "50,000",
         description: "1% Ownership in Regenesis + Lifespan AI + full regenerative lab treatment + exclusive retreat.",
-        features: ["1% Equity (Price for the First Year Only)", "Biological Genetics Reprogramming Lab Therapy", "Gene Editing & Stem Cell Regeneration Lab Therapy", "Exclusive Immortality Retreat", "First Access to Anti-Aging Breakthroughs"],
+        features: ["1% Equity (Price for the First Year Only)", "Biological Genetics Reprogramming", "Gene Editing & Stem Cell Regeneration Lab Treatment", "Exclusive Immortality Retreat", "First Access to Anti-Aging Breakthroughs"],
         gradient: "linear-gradient(135deg, #0000ff, #ff00ff, #00ffcc)"
     }
 ];
