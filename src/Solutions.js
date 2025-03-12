@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Grid, Card, CardContent, Button, Box } from "@mui/material";
+import { Typography, Grid, Card, CardContent, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { keyframes } from "@emotion/react";
 
@@ -18,49 +18,37 @@ const neonGlow = keyframes`
 `;
 
 const solutions = [
-    {
-      title: "🦠 AI Aging Detection – Stop Cellular Damage Early",
-      problem: "Aging is an accumulation of DNA damage, but no one is tracking it.",
-      solution: "Our AI detects early aging markers, allowing for precision interventions before damage escalates.",
-      gradient: "linear-gradient(135deg, #ff00ff, #ff6600, #00ffcc)",
-    },
-    {
-      title: "🔬 Longevity AI – Predict & Extend Your Healthspan",
-      problem: "Traditional health tests miss longevity biomarkers, leading to late-stage interventions.",
-      solution: "We track DNA mutations, cellular resilience & metabolic shifts to predict your biological future.",
-      gradient: "linear-gradient(135deg, #00ffcc, #ff00ff, #ff6600)",
-    },
-    {
-      title: "🧬 Gene Editing & Optimization – Rewriting Your Longevity Blueprint",
-      problem: "Your genetic code dictates how fast you age, but no one is enhancing it.",
-      solution: "Our AI identifies key longevity genes and provides genetic reprogramming for extended healthspan & maximum lifespan.",
-      gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)",
-    },
-    {
-      title: "🏝️ 2-Week Longevity Reset – Island of Regenesis",
-      problem: "Longevity is a lifestyle, not a detox.",
-      solution: "Ours longevity retreats are embodiment of health, connections, lifestyle & in-person AI-powered genetics treatments at a beautiful resort in a tropical island.",
-      gradient: "linear-gradient(135deg, #00ff99, #ff00ff, #00ffff)",
-    },
-    {
-      title: "💊 Personalized AI-Guided Longevity Therapies",
-      problem: "One-size-fits-all anti-aging treatments fail to consider genetic diversity.",
-      solution: "Our AI customizes anti-aging supplements & interventions based on your DNA & metabolic profile.",
-      gradient: "linear-gradient(135deg, #ff9900, #00ffff, #ff00ff)",
-    },
-    {
-      title: "🧪 Continuous DNA Tracking – Adaptive Aging Defense",
-      problem: "DNA tests today are static snapshots, offering no long-term insight.",
-      solution: "We provide AI-driven annual longevity assessments that evolve with your biology.",
-      gradient: "linear-gradient(135deg, #0000ff, #ff00ff, #00ffcc)",
-    }
-  ];
-    
+  {
+    title: "🦠 AI-driven Aging Detection",
+    problem: "Aging is an accumulation of DNA damage, but no one is tracking it.",
+    solution: "Our AI detects early aging markers, allowing for precision interventions before damage escalates.",
+    gradient: "linear-gradient(135deg, #ff00ff, #ff6600, #00ffcc)",
+  },
+  {
+    title: "🧬 AI-Powered Gene Optimization",
+    problem: "Your genetic code dictates how fast you age, but no one is enhancing it.",
+    solution: "Our AI identifies key longevity genes and provides genetic reprogramming for extended healthspan & maximum lifespan.",
+    gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)",
+  },
+  {
+    title: "🧪 Personalized Immortality Treatments",
+    problem: "One-size-fits-all anti-aging treatments fail to consider genetic diversity.",
+    solution: "We design perosnalized anti-aging gene treatments based on your DNA & metabolic profile.",
+    gradient: "linear-gradient(135deg, #ff9900, #00ffff, #ff00ff)",
+  },
+  {
+    title: "🏝️ 2-Week Exclusive Immortality Retreat",
+    problem: "Immortality is a lifestyle, not just a detox.",
+    solution: "Embodiment of health, connections, longevity & AI-powered genetics treatments. Join us in our beautiful resort in Island of Regenesis.",
+    gradient: "linear-gradient(135deg, #00ff99, #ff00ff, #00ffff)",
+  },
+];
+
 function Solutions() {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
+        height: "100vh", // Fullscreen
         width: "100vw",
         display: "flex",
         flexDirection: "column",
@@ -70,7 +58,7 @@ function Solutions() {
         background: "linear-gradient(270deg, #ff00ff, #00ffff, #ff6600, #00ff66)",
         backgroundSize: "500% 500%",
         animation: `${acidBackground} 10s infinite alternate ease-in-out`,
-        py: 6,
+        py: 4,
       }}
     >
       <Typography
@@ -78,59 +66,74 @@ function Solutions() {
         gutterBottom
         sx={{
           fontFamily: "Orbitron, sans-serif",
+          fontSize: "3rem",
           background: "linear-gradient(90deg, #ff00ff, #00ffff)",
           WebkitBackgroundClip: "text",
           color: "transparent",
           textShadow: "0px 0px 30px rgba(255, 255, 255, 0.9)",
         }}
       >
-        The Problems We Are Solving 🧬
+        Immortality Solutions 🧬
       </Typography>
 
-      <Grid container spacing={4} justifyContent="center">
+      <Grid
+        container
+        spacing={4} // Spacing between cards
+        justifyContent="center"
+        sx={{
+          width: "90vw",
+          height: "80vh", // Fit cards in viewport
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         {solutions.map((solution, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} sx={{ maxWidth: "400px", maxHeight:"600px",flexGrow: 1 }}>
+          <Grid item xs={12} sm={6} key={index} sx={{ display: "flex", justifyContent: "center" }}>
             <Card
               elevation={10}
               sx={{
                 borderRadius: 6,
                 background: solution.gradient,
                 color: "#fff",
-                padding: "1px",
+                padding: "2px",
                 animation: `${neonGlow} 5s infinite alternate`,
                 backgroundSize: "300% 300%",
                 boxShadow: "0px 0px 50px rgba(255, 0, 255, 0.7)",
+                width: "100%",
+                maxWidth: "500px",
+                height: "280px", // Fixed height
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
             >
               <CardContent
                 sx={{
-                minHeight: "450px",
                   borderRadius: 5,
                   background: "linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(0, 255, 204, 0.3))",
-                  padding: 3,
+                  padding: 4,
                   backdropFilter: "blur(10px)",
                   boxShadow: "inset 0px 0px 30px rgba(255, 255, 255, 0.2)",
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  textAlign: "center",
                 }}
               >
-                <Box>
-                  <Typography
-                    variant="h4"
-                    gutterBottom
-                    sx={{ fontWeight: "bold", textShadow: "0px 0px 15px rgba(255, 255, 255, 1)", color: "#fff" }}
-                  >
-                    {solution.title}
-                  </Typography>
-                  <Typography variant="h5" sx={{ fontWeight: "bold", color: "#fff", mb: 2 }}>
-                    {solution.problem}
-                  </Typography>
-                  <Typography variant="h5" sx={{ fontWeight: "bold", color: "#00ffcc", mb: 3 }}>
-                    {solution.solution}
-                  </Typography>
-                </Box>
+                <Typography
+                  variant="h4"
+                  gutterBottom
+                  sx={{ fontWeight: "bold", fontSize: "1.8rem", textShadow: "0px 0px 15px rgba(255, 255, 255, 1)", color: "#fff" }}
+                >
+                  {solution.title}
+                </Typography>
+                <Typography variant="h6" sx={{ color: "#fff", fontSize: "1.2rem", mb: 1 }}>
+                  {solution.problem}
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: "bold", fontSize: "1.2rem", color: "#00ffcc" }}>
+                  {solution.solution}
+                </Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -138,15 +141,15 @@ function Solutions() {
       </Grid>
 
       {/* Call to Action */}
-      <Box sx={{ mt: 6 }}>
+      <Box sx={{ mt: 4 }}>
         <Button
           variant="contained"
           component={Link}
           to="/products"
           sx={{
             fontWeight: "bold",
-            fontSize: "1.5rem",
-            padding: "12px 30px",
+            fontSize: "1.8rem",
+            padding: "14px 40px",
             background: "linear-gradient(45deg, #ff00ff, #00ffff)",
             color: "#fff",
             borderRadius: "50px",

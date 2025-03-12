@@ -33,7 +33,7 @@ const subscriptionTiers = [
         gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)"
     },
     {
-        title: "🌴 Immortal Lifestyle",
+        title: "🏝️ Immortal Lifestyle",
         price: "20,000",
         description: "Lifespan AI + genetic modification & stem cell rejuvenation lab therapy + 2-Week Longevity Retreat.",
         features: ["Advanced Longevity AI", "Custom Longevity Lab Treatments", "Gene Editing & Regenerative Lab Therapy", "Stem Cell & Peptide Lab Therapy", "Exclusive Immortality Retreat"],
@@ -57,7 +57,7 @@ function Products() {
                 WebkitBackgroundClip: "text",
                 color: "transparent"
             }}>
-                Unlock Your Immortality 🧬
+                Immortality Products 🧬
             </Typography>
 
             <Grid container spacing={4} justifyContent="center">

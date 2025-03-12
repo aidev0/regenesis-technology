@@ -7,6 +7,7 @@ import Payment from "./Payment";
 import Team from "./Team";
 import Logo from "./Logo";
 import Solutions from "./Solutions";
+import Deck from "./Deck";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/logo" element={<Logo />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/deck" element={<Deck />} />
       </Routes>
     </Router>
   );
