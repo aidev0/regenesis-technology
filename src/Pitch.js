@@ -39,7 +39,7 @@ const Pitch = () => {
                     color: "transparent"
                 }}
             >
-                AI for Immortality.
+                AI for Biological Immortality.
             </Typography>
             <Typography
                 variant="h5"

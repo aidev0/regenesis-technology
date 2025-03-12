@@ -17,10 +17,10 @@ const neonGlow = keyframes`
 `;
 
 const steps = [
-  { title: "🧬 Phase 1: AI for Aging Detection", description: "Develop AI models that detect and predict aging markers at a cellular level.", color: "#ff00ff" },
-  { title: "🔬 Phase 2: Genetic Reprogramming", description: "Start reversing aging through AI-powered genetic interventions.", color: "#00ffcc" },
-  { title: "🚀 Phase 3: Clinical Trials", description: "Human trials to validate biological rejuvenation and longevity therapies.", color: "#ff6600" },
-  { title: "🌍 Phase 4: Global Rollout", description: "Deploy Regenesis AI longevity treatments worldwide.", color: "#00ff66" },
+  { title: "🧬 Phase 1: AI for Aging Detection", description: "Develop AI models that detect aging and aging-related diseases from DNA samples.", color: "#ff00ff" },
+  { title: "🔬 Phase 2: Genetic Reprogramming AI", description: "AI-powered aging reversal genetic reprogramming treatments to maximize lifespan.", color: "#00ffcc" },
+  { title: "🚀 Phase 3: Regenesis Clinical Trials", description: "Human trials to validate biological rejuvenation and anti-aging therapies.", color: "#ff6600" },
+  { title: "🌍 Phase 4: Global Rollout", description: "Deploy Regenesis AI immortality treatments worldwide.", color: "#00ff66" },
 ];
 
 const Plan = () => (
@@ -50,7 +50,7 @@ const Plan = () => (
         textShadow: "0px 0px 30px rgba(255, 255, 255, 0.9)",
       }}
     >
-      The Master Plan 🧬🚀
+      The Plan towards Immortality 🧬🚀
     </Typography>
 
     <Grid container spacing={4} justifyContent="center">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Fade, IconButton } from "@mui/material";
 import { ArrowUpward, ArrowDownward } from "@mui/icons-material";
 import { keyframes } from "@emotion/react";
+import Title from "./Title";
 import Pitch from "./Pitch";
 import Solutions from "./Solutions";
 import Products from "./Products";
@@ -10,7 +11,7 @@ import Plan from "./Plan";
 import Market from "./Market";
 import Logo from "./Logo"; // Intro logo
 
-const sections = [Pitch, Solutions, Products, Team, Plan, Market];
+const sections = [Title, Pitch, Solutions, Products, Team, Plan, Market];
 
 const acidTripAnimation = keyframes`
   0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
@@ -103,12 +104,10 @@ const Deck = () => {
         >
           {currentSection === -1 ? (
             <Logo />
-          ) : currentSection === 0 ? (
-            <Box sx={{ width: "100vw", height: "100vh" }}>
-              <Pitch />
-            </Box>
           ) : (
-            React.createElement(sections[currentSection])
+            <Box sx={{ width: "100vw", height: "100vh" }}>
+              {React.createElement(sections[currentSection])}
+            </Box>
           )}
         </Box>
       </Fade>
