@@ -23,13 +23,13 @@ const subscriptionTiers = [
 function Products() {
     return (
         <Container maxWidth="xl" sx={{ py: 7 }}>
-            <Typography variant="h2" textAlign="center" gutterBottom sx={{
+            <Typography variant="h3" textAlign="center" gutterBottom sx={{
                 fontFamily: "Orbitron, sans-serif",
                 background: "linear-gradient(90deg, #ff00ff, #00ffff)",
                 WebkitBackgroundClip: "text",
                 color: "transparent"
             }}>
-                Our Product 🧬
+                Our Product
             </Typography>
 
             <Grid container spacing={4} justifyContent="center">

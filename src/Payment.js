@@ -125,20 +125,6 @@ function Payment() {
         overflow: "hidden"
       }}
     >
-      <Typography
-        variant="h2"
-        gutterBottom
-        sx={{
-          fontFamily: "Orbitron, sans-serif",
-          fontWeight: "bold",
-          textShadow: "0px 0px 30px rgba(255, 255, 255, 0.9)",
-          background: "linear-gradient(90deg, #ff00ff, #00ffff)",
-          WebkitBackgroundClip: "text",
-          color: "transparent"
-        }}
-      >
-        Complete Your Subscription 🧬
-      </Typography>
 
       <Paper
         elevation={10}
