@@ -22,7 +22,7 @@ const teamMembers = [
     name: "Dr. Jacob Rafati",
     role: "Founder, CEO & AI CTO",
     image: "/jake2.png", // Public folder image
-    bio: "Ph.D. in AI. Merging AI with genetics and longevity science to achieve biological immortality.",
+    bio: "Ph.D. in AI. Merging AI with genetics and longevity science to unlock the genetics of aging.",
     linkedin: "https://www.linkedin.com/in/jacob-rafati/",
   },
   {
