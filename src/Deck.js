@@ -20,7 +20,7 @@ const acidTripAnimation = keyframes`
 `;
 
 const Deck = () => {
-  const [currentSection, setCurrentSection] = useState(-1); // Start with logo
+  const [currentSection, setCurrentSection] = useState(0); // Start with logo
   const [fadeIn, setFadeIn] = useState(true);
 
   useEffect(() => {
@@ -102,13 +102,11 @@ const Deck = () => {
             alignItems: "center",
           }}
         >
-          {currentSection === -1 ? (
-            <Logo />
-          ) : (
-            <Box sx={{ width: "100vw", height: "100vh" }}>
-              {React.createElement(sections[currentSection])}
-            </Box>
-          )}
+
+          <Box sx={{ width: "100vw", height: "100vh" }}>
+            {React.createElement(sections[currentSection])}
+          </Box>
+
         </Box>
       </Fade>
 
