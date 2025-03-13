@@ -54,7 +54,7 @@ const Pitch = () => {
                     lineHeight: 1.6
                 }}
             >
-                Regenesis Technology is using AI to decode aging at the
+                Regenesis Technology is developing AI to decode aging at the
                 <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}>genetic level</Box>,
                 identifying its root causes and developing interventions to prevent aging-related diseases.
             </Typography>
