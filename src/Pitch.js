@@ -39,7 +39,7 @@ const Pitch = () => {
                     color: "transparent"
                 }}
             >
-                AI for Biological Immortality.
+                AI for Aging Detection.
             </Typography>
             <Typography
                 variant="h5"
@@ -54,14 +54,11 @@ const Pitch = () => {
                     lineHeight: 1.6
                 }}
             >
-                Regenesis Technology is on a mission to eliminate aging and achieve
-                <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}> biological immortality. </Box>
-                We are developing AI to decode the
-                <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}> genetics of aging </Box>
-                and recommend genetic reprogramming to reverse aging, maximize lifespan, and extend healthspan.
-                This is the beginning of a future where
-                <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}> aging is a choice. </Box>
+                Regenesis Technology is using AI to decode aging at the
+                <Box component="span" sx={{ fontWeight: "bold", mx: 0.5 }}>genetic level</Box>,
+                identifying its root causes and developing interventions to prevent it.
             </Typography>
+            <JoinButton />
         </Box>
     );
 };

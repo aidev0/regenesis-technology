@@ -17,38 +17,33 @@ const neonGlow = keyframes`
   100% { box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.6); }
 `;
 
+// **AI-Powered Aging Detection Breakdown**
 const solutions = [
   {
-    title: "🦠 AI-driven Aging Detection",
-    problem: "Aging is an accumulation of DNA damage, but no one is tracking it.",
-    solution: "Our AI detects early aging markers, allowing for precision interventions before damage escalates.",
+    title: "🔬 DNA & Epigenetic Analysis",
+    problem: "Aging begins at the molecular level, but it’s invisible until it's too late.",
+    solution: "We use AI to analyze DNA mutations, epigenetic drift, and cellular markers to detect aging at its root.",
     gradient: "linear-gradient(135deg, #ff00ff, #ff6600, #00ffcc)",
   },
   {
-    title: "🧬 AI-Powered Gene Optimization",
-    problem: "Your genetic code dictates how fast you age, but no one is enhancing it.",
-    solution: "Our AI identifies key longevity genes and provides genetic reprogramming for extended healthspan & maximum lifespan.",
+    title: "📊 AI-Powered Biomarker Tracking",
+    problem: "No current system provides real-time aging insights at a personal level.",
+    solution: "Our AI detects metabolic and protein-level biomarkers, predicting biological age and tracking longevity interventions.",
+    gradient: "linear-gradient(135deg, #00ffcc, #ff00ff, #ff6600)",
+  },
+  {
+    title: "🧠 Predictive Aging Models",
+    problem: "Most people don't know they are aging until symptoms appear.",
+    solution: "By analyzing vast datasets, our AI predicts how fast you're aging and recommends interventions before deterioration begins.",
     gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)",
-  },
-  {
-    title: "🧪 Personalized Immortality Treatments",
-    problem: "One-size-fits-all anti-aging treatments fail to consider genetic diversity.",
-    solution: "We design perosnalized anti-aging gene treatments based on your DNA & metabolic profile.",
-    gradient: "linear-gradient(135deg, #ff9900, #00ffff, #ff00ff)",
-  },
-  {
-    title: "🏝️ 2-Week Exclusive Immortality Retreat",
-    problem: "Immortality is a lifestyle, not just a detox.",
-    solution: "Embodiment of health, connections, longevity & AI-powered genetics treatments. Join us in our beautiful resort in Island of Regenesis.",
-    gradient: "linear-gradient(135deg, #00ff99, #ff00ff, #00ffff)",
-  },
+  }
 ];
 
 function Solutions() {
   return (
     <Box
       sx={{
-        height: "100vh", // Fullscreen
+        minHeight: "100vh",
         width: "100vw",
         display: "flex",
         flexDirection: "column",
@@ -58,7 +53,7 @@ function Solutions() {
         background: "linear-gradient(270deg, #ff00ff, #00ffff, #ff6600, #00ff66)",
         backgroundSize: "500% 500%",
         animation: `${acidBackground} 10s infinite alternate ease-in-out`,
-        py: 4,
+        py: 4, // Add padding
       }}
     >
       <Typography
@@ -73,22 +68,13 @@ function Solutions() {
           textShadow: "0px 0px 30px rgba(255, 255, 255, 0.9)",
         }}
       >
-        Immortality Solutions 🧬
+        AI-Powered Aging Detection 🧬
       </Typography>
 
-      <Grid
-        container
-        spacing={4} // Spacing between cards
-        justifyContent="center"
-        sx={{
-          width: "90vw",
-          height: "80vh", // Fit cards in viewport
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
+      {/* Cards Section */}
+      <Grid container spacing={4} justifyContent="center" sx={{ width: "90vw", mt: 3 }}>
         {solutions.map((solution, index) => (
-          <Grid item xs={12} sm={6} key={index} sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: "flex", justifyContent: "center" }}>
             <Card
               elevation={10}
               sx={{
@@ -100,8 +86,8 @@ function Solutions() {
                 backgroundSize: "300% 300%",
                 boxShadow: "0px 0px 50px rgba(255, 0, 255, 0.7)",
                 width: "100%",
-                maxWidth: "500px",
-                height: "280px", // Fixed height
+                maxWidth: "400px",
+                height: "280px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -121,17 +107,13 @@ function Solutions() {
                   textAlign: "center",
                 }}
               >
-                <Typography
-                  variant="h4"
-                  gutterBottom
-                  sx={{ fontWeight: "bold", fontSize: "1.8rem", textShadow: "0px 0px 15px rgba(255, 255, 255, 1)", color: "#fff" }}
-                >
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", textShadow: "0px 0px 15px rgba(255, 255, 255, 1)", color: "#fff" }}>
                   {solution.title}
                 </Typography>
-                <Typography variant="h6" sx={{ color: "#fff", fontSize: "1.2rem", mb: 1 }}>
+                <Typography variant="body1" sx={{ color: "#fff", fontSize: "1rem", mb: 1 }}>
                   {solution.problem}
                 </Typography>
-                <Typography variant="h6" sx={{ fontWeight: "bold", fontSize: "1.2rem", color: "#00ffcc" }}>
+                <Typography variant="body1" sx={{ fontWeight: "bold", color: "#00ffcc" }}>
                   {solution.solution}
                 </Typography>
               </CardContent>
@@ -140,16 +122,16 @@ function Solutions() {
         ))}
       </Grid>
 
-      {/* Call to Action */}
-      <Box sx={{ mt: 4 }}>
+      {/* Call to Action (Button Now at Bottom with Padding) */}
+      <Box sx={{ mt: 5, pb: 4 }}> {/* Ensure space and padding at the bottom */}
         <Button
           variant="contained"
           component={Link}
           to="/products"
           sx={{
             fontWeight: "bold",
-            fontSize: "1.8rem",
-            padding: "14px 40px",
+            fontSize: "1.5rem",
+            padding: "12px 32px",
             background: "linear-gradient(45deg, #ff00ff, #00ffff)",
             color: "#fff",
             borderRadius: "50px",
@@ -158,7 +140,7 @@ function Solutions() {
             "&:hover": { background: "linear-gradient(45deg, #00ffff, #ff00ff)", transform: "scale(1.1)" },
           }}
         >
-          🔥 Take Control of Your Longevity 🔥
+          Join the Future of Longevity 🚀
         </Button>
       </Box>
     </Box>

@@ -50,7 +50,7 @@ const Market = () => (
         textShadow: "0px 0px 30px rgba(255, 255, 255, 0.9)",
       }}
     >
-      The Market for Immortality 💰
+      The Market for Longevity 💰
     </Typography>
 
     <Grid container spacing={4} justifyContent="center">

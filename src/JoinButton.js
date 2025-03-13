@@ -22,7 +22,7 @@ const JoinButton = () => {
                 "&:hover": { background: "linear-gradient(45deg, #00ffff, #ff00ff)", transform: "scale(1.05)" }
             }}
         >
-            🧬 I want to live forever, sign me up!
+            🧬 Join the Future of Longevity!
         </Button>
     );
 };

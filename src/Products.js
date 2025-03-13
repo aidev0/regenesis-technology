@@ -12,39 +12,11 @@ const neonPulse = keyframes`
 
 const subscriptionTiers = [
     {
-        title: "🦠 Healthspan AI",
-        price: "499",
+        title: "🧬 Aging Detection AI",
+        price: "999",
         description: "AI-powered detection of aging-related diseases & annual DNA testing.",
         features: ["AI-Powered Aging & Disease Detection", "AI-Driven Healthspan & Longevity Insights", "Annual DNA Testing & Longevity Biomarkers"],
         gradient: "linear-gradient(135deg, #ff00ff, #ff6600, #00ffcc)"
-    },
-    {
-        title: "🧬 Lifespan AI",
-        price: "999",
-        description: "AI-powered lifespan & longevity insights, gene modification recommendations & annual DNA testing.",
-        features: ["AI-Powered Aging Detection", "AI-Powered Aging Reversal Recommendations", "AI-Driven Gene Modification Insights", "Annual DNA Testing & Longevity Biomarkers"],
-        gradient: "linear-gradient(135deg, #00ffcc, #ff00ff, #ff6600)"
-    },
-    {
-        title: "🧪 Regenesis Lab",
-        price: "10,000",
-        description: "AI-driven aging reversal with gene modification & stem cell rejuvenation lab treatments.",
-        features: ["Gene Modification & Stem Cell Lab Therapy", "Genetic & Cellular Optimization", "AI-Based Aging Detection", "AI-Driven Gene Modification"],
-        gradient: "linear-gradient(135deg, #ff6600, #00ffcc, #ff00ff)"
-    },
-    {
-        title: "🏝️ Immortal Lifestyle",
-        price: "20,000",
-        description: "Lifespan AI + genetic modification & stem cell rejuvenation lab therapy + 2-Week Longevity Retreat.",
-        features: ["Advanced Longevity AI", "Custom Longevity Lab Treatments", "Gene Editing & Regenerative Lab Therapy", "Stem Cell & Peptide Lab Therapy", "Exclusive Immortality Retreat"],
-        gradient: "linear-gradient(135deg, #00ff99, #ff00ff, #00ffff)"
-    },
-    {
-        title: "♾️ Immortal Investor",
-        price: "50,000",
-        description: "1% Ownership in Regenesis + Lifespan AI + full regenerative lab treatment + exclusive retreat.",
-        features: ["1% Equity (Price for the First Year Only)", "Biological Genetics Reprogramming", "Gene Editing & Stem Cell Regeneration Lab Treatment", "Exclusive Immortality Retreat", "First Access to Anti-Aging Breakthroughs"],
-        gradient: "linear-gradient(135deg, #0000ff, #ff00ff, #00ffcc)"
     }
 ];
 
@@ -57,7 +29,7 @@ function Products() {
                 WebkitBackgroundClip: "text",
                 color: "transparent"
             }}>
-                Immortality Products 🧬
+                Our Product 🧬
             </Typography>
 
             <Grid container spacing={4} justifyContent="center">

@@ -11,7 +11,7 @@ import Plan from "./Plan";
 import Market from "./Market";
 import Logo from "./Logo"; // Intro logo
 
-const sections = [Title, Pitch, Solutions, Products, Team, Plan, Market];
+const sections = [Title, Pitch, Solutions, Products, Team, Market];
 
 const acidTripAnimation = keyframes`
   0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
