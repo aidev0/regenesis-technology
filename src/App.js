@@ -8,6 +8,7 @@ import Team from "./Team";
 import Logo from "./Logo";
 import Solutions from "./Solutions";
 import Deck from "./Deck";
+import GeneticRiskReport from "./GeneticRiskReport";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/logo" element={<Logo />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/deck" element={<Deck />} />
+        <Route path="/report" element={<GeneticRiskReport />} />
       </Routes>
     </Router>
   );
