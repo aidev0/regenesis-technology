@@ -4,31 +4,54 @@ import { Container, Typography, Paper, Box, Grid, Card, CardContent } from "@mui
 const risks = [
   {
     title: "🧠 Brain & Mental Health Risks",
-    details:
-      "Your genetics (RS2075650, RS4027132, RS4959039) show a higher risk for Alzheimer's disease, bipolar disorder, and multiple sclerosis. Your brain may be more sensitive to inflammation and oxidative stress.",
-    prevention: "Eat omega-3s, blueberries, and leafy greens. Stay mentally active and engaged.",
+    details: "Your genetics (Rs4027132, Rs1064395, Rs995030) show a higher risk for bipolar disorder, schizophrenia, and testicular cancer. Your brain may be more sensitive to neurochemical imbalances.",
+    prevention: "Maintain a healthy lifestyle with a balanced diet, regular exercise, and mental wellness activities like meditation and cognitive exercises.",
   },
   {
     title: "❤️ Heart & Metabolic Risks",
-    details:
-      "Increased risk of diabetes, high blood pressure, and heart disease (RS599839, RS662799, RS2383207). Your genes affect insulin sensitivity and cholesterol metabolism.",
-    prevention: "Reduce sugar, eat heart-healthy fats, and exercise regularly.",
+    details: "Increased risk of hypertension, type-2 diabetes, and cardiovascular disease (Rs599839, Rs662799, Rs4402960). Your genes impact insulin sensitivity and cholesterol metabolism.",
+    prevention: "Follow a heart-healthy diet, limit sugar intake, and engage in consistent cardiovascular exercise.",
   },
   {
     title: "🛡️ Immune System & Inflammation",
-    details:
-      "Higher risk for autoimmune diseases like Crohn’s disease, rheumatoid arthritis, and lupus (RS10830963, RS3738919, RS1360780). Your immune system may trigger inflammation more easily.",
-    prevention: "Follow an anti-inflammatory diet (turmeric, probiotics, omega-3s). Reduce stress.",
+    details: "Higher risk for autoimmune diseases like Crohn’s disease, rheumatoid arthritis, and multiple sclerosis (Rs10830963, Rs3738919, Rs1265181). Your immune system may trigger inflammation more easily.",
+    prevention: "Follow an anti-inflammatory diet rich in turmeric, probiotics, and omega-3s. Manage stress effectively.",
   },
   {
     title: "💊 Drug Sensitivity & Detoxification",
-    details:
-      "Your body may struggle to detoxify certain drugs efficiently (RS1800462, RS4244285). This could lead to side effects or reduced effectiveness of medications.",
-    prevention: "Consult a specialist before taking new medications.",
+    details: "Your body may struggle to metabolize certain drugs efficiently (Rs1800462, Rs4244285, Rs12777823), potentially leading to increased side effects or reduced effectiveness.",
+    prevention: "Consult a healthcare professional before taking new medications to assess potential risks and alternative options.",
   },
 ];
 
 const riskBreakdown = [
+  {
+    category: "🚨 Critical Risks (Magnitude 6.0 - 8.8)",
+    color: "#b71c1c",
+    risks: [
+      {
+        title: "🧬 Glycine Encephalopathy",
+        magnitude: "8.8",
+        genotype: "Rs386833549 (C;C)",
+        impact: "Severe metabolic disorder affecting brain function.",
+        recommendation: "Consult a genetic specialist for further evaluation and management.",
+      },
+      {
+        title: "🧬 Fanconi Anemia",
+        magnitude: "7.0",
+        genotype: "Rs730881888 (A;A)",
+        impact: "Rare inherited bone marrow failure syndrome.",
+        recommendation: "Seek genetic counseling and potential medical interventions.",
+      },
+      {
+        title: "🧬 Gaucher's Disease",
+        magnitude: "8.0",
+        genotype: "Rs1064651 (C;C)",
+        impact: "Potential enzyme deficiency affecting metabolism.",
+        recommendation: "Medical evaluation and enzyme replacement therapy may be required.",
+      },
+    ],
+  },
   {
     category: "🚨 Severe Risks (Magnitude 3.0 - 5.9)",
     color: "#d32f2f",
@@ -36,21 +59,21 @@ const riskBreakdown = [
       {
         title: "🧬 Non-Phenylketonuria Hyperphenylalaninemia",
         magnitude: "5.9",
-        genotype: "RS62514958 (G;G)",
+        genotype: "Rs62514958 (G;G)",
         impact: "Affects phenylalanine metabolism, impacting brain function and neurotransmitters.",
         recommendation: "Monitor phenylalanine levels, follow dietary recommendations, and seek medical advice.",
       },
       {
         title: "🧬 Detoxification Impairment",
         magnitude: "3.5",
-        genotype: "RS1800462 (C;C)",
+        genotype: "Rs1800462 (C;C)",
         impact: "Reduced ability to detoxify chemicals and drugs, leading to higher toxin accumulation.",
         recommendation: "Eat detoxifying foods (greens, turmeric), avoid unnecessary medications.",
       },
       {
         title: "🧬 Type-2 Diabetes Risk",
         magnitude: "3.0",
-        genotype: "RS7754840 (C;G)",
+        genotype: "Rs7754840 (C;G)",
         impact: "Higher insulin resistance, making it easier to develop diabetes.",
         recommendation: "Follow a low-glycemic diet, stay active, and monitor blood sugar.",
       },
@@ -63,21 +86,21 @@ const riskBreakdown = [
       {
         title: "🧬 Alzheimer's Disease Risk",
         magnitude: "2.0",
-        genotype: "RS2075650 (A;G)",
+        genotype: "Rs2075650 (A;G)",
         impact: "2x higher risk of Alzheimer's disease.",
         recommendation: "Eat omega-3s, do mental exercises, and maintain social connections.",
       },
       {
         title: "🧬 Autoimmune Disease Risk",
         magnitude: "2.7",
-        genotype: "RS10830963 (C;G)",
+        genotype: "Rs10830963 (C;G)",
         impact: "Increased risk for Crohn’s disease, rheumatoid arthritis, and lupus.",
         recommendation: "Follow an anti-inflammatory diet (turmeric, probiotics, omega-3s).",
       },
       {
         title: "🧬 Increased Risk of Rheumatoid Arthritis",
         magnitude: "2.5",
-        genotype: "RS3738919 (C;C)",
+        genotype: "Rs3738919 (C;C)",
         impact: "1.94x higher likelihood of developing rheumatoid arthritis.",
         recommendation: "Consider joint-friendly activities, anti-inflammatory diet, and early screening.",
       },
@@ -90,14 +113,14 @@ const riskBreakdown = [
       {
         title: "🧬 Elevated Risk for Atrial Fibrillation",
         magnitude: "1.5",
-        genotype: "RS13376333 (C;T)",
+        genotype: "Rs13376333 (C;T)",
         impact: "Higher likelihood of irregular heartbeat, increasing stroke risk.",
         recommendation: "Monitor heart health, do ECG checkups, and control blood pressure.",
       },
       {
         title: "🧬 Bipolar Disorder Susceptibility",
         magnitude: "1.5",
-        genotype: "RS4027132 (A;G)",
+        genotype: "Rs4027132 (A;G)",
         impact: "1.39x increased likelihood of developing bipolar disorder.",
         recommendation: "Practice stress management and regular mental health check-ins.",
       },

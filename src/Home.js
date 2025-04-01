@@ -1,15 +1,7 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Box, Button, Container } from '@mui/material';
+import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { keyframes } from '@emotion/react';
 import Pitch from './Pitch';
-
-// **Pulsing Background Animation**
-const acidTripAnimation = keyframes`
-  0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
-  50% { background-position: 100% 50%; filter: hue-rotate(90deg); }
-  100% { background-position: 0% 50%; filter: hue-rotate(180deg); }
-`;
 
 function Home() {
     return (

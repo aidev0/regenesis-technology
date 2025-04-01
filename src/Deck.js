@@ -1,26 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Box, Fade, IconButton } from "@mui/material";
 import { ArrowUpward, ArrowDownward } from "@mui/icons-material";
-import { keyframes } from "@emotion/react";
 import Title from "./Title";
 import Pitch from "./Pitch";
 import Solutions from "./Solutions";
 import Products from "./Products";
 import Team from "./Team";
-import Plan from "./Plan";
 import Market from "./Market";
-import Logo from "./Logo"; // Intro logo
 
 const sections = [Title, Pitch, Solutions, Products, Team, Market];
 
-const acidTripAnimation = keyframes`
-  0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
-  50% { background-position: 100% 50%; filter: hue-rotate(120deg); }
-  100% { background-position: 0% 50%; filter: hue-rotate(240deg); }
-`;
-
 const Deck = () => {
-  const [currentSection, setCurrentSection] = useState(0); // Start with logo
+  const [currentSection, setCurrentSection] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
 
   useEffect(() => {
@@ -84,10 +75,8 @@ const Deck = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        background: "linear-gradient(270deg, #ff00ff, #00ffff, #ff6600, #00ff66)",
-        backgroundSize: "400% 400%",
-        animation: `${acidTripAnimation} 10s infinite alternate ease-in-out`,
-        color: "white",
+        backgroundColor: "#ffffff", // Clean white background
+        color: "#000",              // Dark text
         textAlign: "center",
         position: "relative",
       }}
@@ -102,11 +91,9 @@ const Deck = () => {
             alignItems: "center",
           }}
         >
-
           <Box sx={{ width: "100vw", height: "100vh" }}>
             {React.createElement(sections[currentSection])}
           </Box>
-
         </Box>
       </Fade>
 
@@ -114,7 +101,7 @@ const Deck = () => {
       {currentSection > 0 && (
         <IconButton
           onClick={navigatePrev}
-          sx={{ position: "absolute", top: 20, color: "white" }}
+          sx={{ position: "absolute", top: 20, color: "#444" }}
         >
           <ArrowUpward fontSize="large" />
         </IconButton>
@@ -122,7 +109,7 @@ const Deck = () => {
       {currentSection < sections.length - 1 && (
         <IconButton
           onClick={navigateNext}
-          sx={{ position: "absolute", bottom: 20, color: "white" }}
+          sx={{ position: "absolute", bottom: 20, color: "#444" }}
         >
           <ArrowDownward fontSize="large" />
         </IconButton>

@@ -72,6 +72,7 @@ function Navbar() {
             <Button component={Link} to="/" sx={navButtonStyles}>Home</Button>
             <Button component={Link} to="/solutions" sx={navButtonStyles}>Solutions</Button>
             <Button component={Link} to="/products" sx={navButtonStyles}>Products</Button>
+            <Button component={Link} to="/report" sx={navButtonStyles}>Genetic Report</Button>
             <Button component={Link} to="/team" sx={navButtonStyles}>Team</Button>
 
             {/* LOGIN / LOGOUT BUTTON */}

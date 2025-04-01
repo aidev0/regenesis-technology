@@ -1,34 +1,19 @@
 import React from "react";
-import { Container, Typography, Grid, Card, CardContent, Avatar, Box } from "@mui/material";
-import { keyframes } from "@emotion/react";
-
-// **Acid-Trip Animated Background**
-const acidBackground = keyframes`
-  0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
-  50% { background-position: 100% 50%; filter: hue-rotate(120deg); }
-  100% { background-position: 0% 50%; filter: hue-rotate(240deg); }
-`;
-
-// **Neon Glow Animation for Avatars**
-const neonPulse = keyframes`
-  0% { box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.6); }
-  50% { box-shadow: 0px 0px 30px rgba(0, 255, 255, 1); }
-  100% { box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.6); }
-`;
+import { Typography, Grid, Card, CardContent, Avatar, Box } from "@mui/material";
 
 // **Founders Data**
 const teamMembers = [
   {
     name: "Dr. Jacob Rafati",
     role: "Founder, CEO & AI CTO",
-    image: "/jake2.png", // Public folder image
+    image: "/jake2.png",
     bio: "Ph.D. in AI. Merging AI with genetics and longevity science to unlock the genetics of aging.",
     linkedin: "https://www.linkedin.com/in/jacob-rafati/",
   },
   {
     name: "Dr. Nazir Okur",
     role: "Co-founder, CFO & Genetics CTO",
-    image: "/nazir.jpeg", // Public folder image
+    image: "/nazir.jpeg",
     bio: "Ph.D. in Genetics. Expert in mitochondrial therapy and gene modification for aging reversal.",
     linkedin: "https://www.linkedin.com/in/mnokur/",
   },
@@ -38,35 +23,32 @@ function Team() {
   return (
     <Box
       sx={{
-        minHeight: "120vh",
+        minHeight: "100vh",
         width: "100vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        background: "linear-gradient(270deg, #ff00ff, #00ffff, #ff6600, #00ff66)",
-        backgroundSize: "500% 500%",
-        animation: `${acidBackground} 10s infinite alternate ease-in-out`,
-        overflow: "hidden",
+        background: "white",
         py: 6,
+        px: 2,
       }}
     >
-      {/* Page Title */}
-      
       <Typography
         variant="h2"
         gutterBottom
         sx={{
           fontFamily: "Orbitron, sans-serif",
-          fontWeight: "regular",
-          background: "linear-gradient(90deg, #ff00ff, #00ffff)",
+          fontWeight: 600,
+          fontSize: "2.5rem",
+          background: "linear-gradient(90deg, #0077ff, #00e6e6)",
           WebkitBackgroundClip: "text",
           color: "transparent",
-          textShadow: "0px 0px 30px rgba(255, 255, 255, 0.9)",
+          mb: 4,
         }}
       >
-        Meet the Founders.
+        Meet the Founders
       </Typography>
 
       <Grid container spacing={4} justifyContent="center">
@@ -74,20 +56,20 @@ function Team() {
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card
               sx={{
-                background: "rgba(0, 0, 0, 0.85)",
-                color: "#fff",
-                borderRadius: "10px",
-                padding: "15px",
+                backgroundColor: "#f5f5f5",
+                color: "#000",
+                borderRadius: "12px",
+                padding: "24px",
                 textAlign: "center",
-                boxShadow: "0px 0px 25px rgba(255, 255, 255, 0.2)",
+                boxShadow: "0 6px 24px rgba(0,0,0,0.1)",
                 transition: "0.3s",
                 "&:hover": {
-                  transform: "scale(1.08)",
-                  boxShadow: "0px 0px 40px rgba(255, 255, 255, 0.6)",
+                  transform: "scale(1.04)",
+                  boxShadow: "0 12px 36px rgba(0,0,0,0.15)",
                 },
                 cursor: "pointer",
               }}
-              onClick={() => window.open(member.linkedin, "_blank")} // Opens LinkedIn in new tab
+              onClick={() => window.open(member.linkedin, "_blank")}
             >
               <Avatar
                 src={member.image}
@@ -96,22 +78,18 @@ function Team() {
                   width: 140,
                   height: 140,
                   margin: "0 auto",
-                  boxShadow: "0px 0px 15px rgba(255, 0, 255, 0.7)",
-                  animation: `${neonPulse} 2s infinite alternate`,
-                  filter: "grayscale(0%) contrast(120%)",
-                  "&:hover": {
-                    filter: "grayscale(0%) contrast(150%) brightness(1.2)",
-                  },
+                  mb: 2,
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
                 }}
               />
               <CardContent>
-                <Typography variant="h4" sx={{ fontWeight: "bold", color: "#00ffff", mb: 1 }}>
+                <Typography variant="h5" sx={{ fontWeight: "bold", color: "#0077ff", mb: 1 }}>
                   {member.name}
                 </Typography>
-                <Typography variant="h6" sx={{ color: "#ff00ff", mb: 2 }}>
+                <Typography variant="subtitle1" sx={{ color: "#555", mb: 2 }}>
                   {member.role}
                 </Typography>
-                <Typography variant="body1" sx={{ color: "#ddd" }}>
+                <Typography variant="body1" sx={{ color: "#444" }}>
                   {member.bio}
                 </Typography>
               </CardContent>
