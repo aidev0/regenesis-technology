@@ -9,14 +9,7 @@ const teamMembers = [
     image: "/jake2.png",
     bio: "Ph.D. in AI. Merging AI with genetics and longevity science to unlock the genetics of aging.",
     linkedin: "https://www.linkedin.com/in/jacob-rafati/",
-  },
-  {
-    name: "Dr. Nazir Okur",
-    role: "Co-founder, CFO & Genetics CTO",
-    image: "/nazir.jpeg",
-    bio: "Ph.D. in Genetics. Expert in mitochondrial therapy and gene modification for aging reversal.",
-    linkedin: "https://www.linkedin.com/in/mnokur/",
-  },
+  }
 ];
 
 function Team() {

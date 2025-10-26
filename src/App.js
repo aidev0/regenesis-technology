@@ -5,7 +5,7 @@ import Home from "./Home";
 import Products from "./Products";
 import Payment from "./Payment";
 import Team from "./Team";
-import Logo from "./Logo";
+import LogoPreview from "./LogoPreview";
 import Solutions from "./Solutions";
 import Deck from "./Deck";
 import GeneticRiskReport from "./GeneticRiskReport";
@@ -19,7 +19,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/logo" element={<Logo />} />
+        <Route path="/logo" element={<LogoPreview />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/deck" element={<Deck />} />
         <Route path="/report" element={<GeneticRiskReport />} />
